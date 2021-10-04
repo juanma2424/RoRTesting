@@ -1,0 +1,21 @@
+<br>
+<h1>Employee Data</h1> 
+<hr>
+<h5> The user id is:   <%= @employee.id %> </h5>
+<hr>
+<h5> The username is:  <%= @employee.name %> </h5>
+<hr>
+<h5> the user's last name is:   <%= @employee.lastname %> </h5>
+<hr>
+<h5> the user's address is:   <%= @employee.address %> </h5>
+<hr>
+<h5> the user's phone number is:   <%= @employee.phone %> </h5>
+<hr>
+<h5> the user's salary is:   <%= @employee.salary %> </h5>
+<hr>
+<h5> the user was created:   <%= @employee.created_at %> </h5>
+<hr>
+<h5> the user was updated:   <%= @employee.updated_at %> </h5>
+<hr>
+<%= link_to "Home", employees_path,:class => 'btn btn-primary' %>
+

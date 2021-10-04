@@ -1,0 +1,50 @@
+
+<div class="container">
+    <%-  if @employee.errors.any? %>
+        <div class="alert alert-danger">
+        <h4>Error</h4>
+        <%-  if @employee.errors[:name].first%> 
+        <p> Name <%= @employee.errors[:name].first%></p>
+        <%end%>
+        <%-  if @employee.errors[:lastname].first%> 
+        <p> LastName <%= @employee.errors[:lastname].first%></p>
+        <%end%>
+        <%-  if @employee.errors[:address].first%> 
+        <p> Address <%= @employee.errors[:address].first%></p>
+        <%end%>
+        <%-  if @employee.errors[:phone].first%> 
+        <p> Phone <%= @employee.errors[:phone].first%></p>
+        <%end%>
+        <%-  if @employee.errors[:salary].first%> 
+        <p> Salary <%= @employee.errors[:salary].first%></p>
+        <%end%>
+        </div>
+    <%end%>
+</div>
+
+<div class="form-group">
+<%= form_for @employee do |f|%>
+    <%= f.label :Name %>
+    <br>
+    <%= f.text_field :name, class:'form-control' %>
+    <br>
+    <%= f.label :LastName %>
+    <br>
+    <%= f.text_field :lastname, class:'form-control' %>
+    <br>
+    <%= f.label :Address %>
+    <br>
+    <%= f.text_field :address, class:'form-control' %>
+    <br>
+    <%= f.label :Phone %>
+    <br>
+    <%= f.text_field :phone, class:'form-control' %>
+    <br>
+    <%= f.label :Salary %>
+    <br>
+    <%= f.text_field :salary, class:'form-control' %>
+    <br>
+    <%= f.submit 'Save',:class => 'btn btn-primary' %>
+    <%= link_to "Home", employees_path,:class => 'btn btn-primary' %>
+<% end %>
+</div>
