@@ -4212,3 +4212,1128 @@ Processing by EmployeesController#index as HTML
 Completed 200 OK in 99ms (Views: 97.0ms | ActiveRecord: 0.2ms | Allocations: 7979)
 
 
+Started GET "/" for ::1 at 2021-10-04 15:22:54 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/juanma/.rvm/gems/ruby-2.7.2/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/juanma/.rvm/gems/ruby-2.7.2/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.9ms | Allocations: 332)
+Completed 200 OK in 23ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 2449)
+
+
+Started GET "/" for ::1 at 2021-10-04 15:22:54 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/juanma/.rvm/gems/ruby-2.7.2/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/juanma/.rvm/gems/ruby-2.7.2/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 21.5ms | Allocations: 214)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.0ms | Allocations: 1413)
+
+
+Started GET "/employees" for ::1 at 2021-10-04 15:23:02 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 3.7ms | Allocations: 522)
+  Rendered employees/index.html.erb within layouts/application (Duration: 32.4ms | Allocations: 6218)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 132.5ms | Allocations: 19178)
+Completed 200 OK in 139ms (Views: 132.0ms | ActiveRecord: 3.6ms | Allocations: 20546)
+
+
+Started GET "/employees/1/edit" for ::1 at 2021-10-04 15:23:07 -0600
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:41:in `set_employee'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 40.1ms | Allocations: 3167)
+  Rendered employees/edit.html.erb within layouts/application (Duration: 43.2ms | Allocations: 3472)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 80.6ms | Allocations: 9441)
+Completed 200 OK in 140ms (Views: 82.6ms | ActiveRecord: 0.3ms | Allocations: 11506)
+
+
+Started PATCH "/employees/1" for ::1 at 2021-10-04 15:23:12 -0600
+Processing by EmployeesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"Employee111", "lastname"=>"EmployeeLN1", "address"=>"EmployeeAddres1", "phone"=>"88811", "salary"=>"7000"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:41:in `set_employee'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:25:in `update'
+  [1m[36mEmployee Update (59.2ms)[0m  [1m[33mUPDATE "employees" SET "name" = ?, "updated_at" = ? WHERE "employees"."id" = ?[0m  [["name", "Employee111"], ["updated_at", "2021-10-04 21:23:12.578094"], ["id", 1]]
+  ↳ app/controllers/employees_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (177.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/employees_controller.rb:25:in `update'
+Redirected to http://localhost:3000/employees/1
+Completed 302 Found in 255ms (ActiveRecord: 236.5ms | Allocations: 5420)
+
+
+Started GET "/employees/1" for ::1 at 2021-10-04 15:23:12 -0600
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:41:in `set_employee'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/show.html.erb within layouts/application
+  Rendered employees/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 365)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 6335)
+Completed 200 OK in 28ms (Views: 22.3ms | ActiveRecord: 0.4ms | Allocations: 7392)
+
+
+Started GET "/employees" for ::1 at 2021-10-04 15:23:16 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 2.3ms | Allocations: 284)
+  Rendered employees/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 1728)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 7692)
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.2ms | Allocations: 8088)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:23:24 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 8.1ms | Allocations: 1142)
+  Rendered employees/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1346)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 7880)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.0ms | Allocations: 8423)
+
+
+Started GET "/employees" for ::1 at 2021-10-04 15:23:27 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 0.5ms | Allocations: 283)
+  Rendered employees/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1133)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 7101)
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.1ms | Allocations: 7496)
+
+
+Started GET "/employees/1" for ::1 at 2021-10-04 15:23:29 -0600
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:41:in `set_employee'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/show.html.erb within layouts/application
+  Rendered employees/show.html.erb within layouts/application (Duration: 6.9ms | Allocations: 126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | Allocations: 6676)
+Completed 200 OK in 63ms (Views: 47.8ms | ActiveRecord: 0.1ms | Allocations: 7605)
+
+
+Started GET "/employees" for ::1 at 2021-10-04 15:23:31 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 0.6ms | Allocations: 280)
+  Rendered employees/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1137)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | Allocations: 7101)
+Completed 200 OK in 48ms (Views: 46.9ms | ActiveRecord: 0.2ms | Allocations: 7497)
+
+
+Started GET "/employees" for ::1 at 2021-10-04 15:30:16 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/employees/index.html.erb:12
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 1.2ms | Allocations: 333)
+  Rendered employees/index.html.erb within layouts/application (Duration: 52.8ms | Allocations: 5051)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 80.8ms | Allocations: 11044)
+Completed 200 OK in 132ms (Views: 89.3ms | ActiveRecord: 0.7ms | Allocations: 11993)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:30:19 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 5.4ms | Allocations: 1145)
+  Rendered employees/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1712)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 7788)
+Completed 200 OK in 33ms (Views: 29.1ms | ActiveRecord: 0.0ms | Allocations: 8196)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:30:22 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+Redirected to http://localhost:3000/employees
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms | Allocations: 1450)
+
+
+Started GET "/employees" for ::1 at 2021-10-04 15:30:22 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 2.4ms | Allocations: 281)
+  Rendered employees/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 7096)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.4ms | Allocations: 7488)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:32:59 -0600
+Processing by EmployeesController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/employees_controller.rb:5:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 7.4ms | Allocations: 1203)
+  Rendered employees/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 7315)
+Completed 200 OK in 49ms (Views: 23.7ms | ActiveRecord: 2.7ms | Allocations: 12417)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:33:01 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendered employees/_employee.html.erb (Duration: 2.1ms | Allocations: 1401)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3111)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil}, missing required keys: [:id]):
+    3: <hr>
+    4: <p> 
+    5: Name: <%= employee.name %> ㅤId:<%= employee.id%> ㅤ   
+    6: <%= link_to "Edit", edit_employee_path(employee) %>
+    7: <%= link_to "Delete", employee, method: :delete, data: { confirm: "are you sure to delete this user?" } %> 
+    8: <%= link_to "Show",  employee_path(employee) %>
+    9: </p>
+  
+app/views/employees/_employee.html.erb:6
+app/controllers/employees_controller.rb:13:in `create'
+Started GET "/employees" for ::1 at 2021-10-04 15:33:48 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/employees/index.html.erb:12
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 1.7ms | Allocations: 347)
+  Rendered employees/index.html.erb within layouts/application (Duration: 20.9ms | Allocations: 5687)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | Allocations: 11809)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 1.6ms | Allocations: 12875)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:33:50 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 5.7ms | Allocations: 1211)
+  Rendered employees/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1299)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 7854)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.0ms | Allocations: 8264)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:33:52 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendered employees/_employee.html.erb (Duration: 1.4ms | Allocations: 939)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2530)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil}, missing required keys: [:id]):
+    3: <hr>
+    4: <p> 
+    5: Name: <%= employee.name %> ㅤId:<%= employee.id%> ㅤ   
+    6: <%= link_to "Edit", edit_employee_path(employee) %>
+    7: <%= link_to "Delete", employee, method: :delete, data: { confirm: "are you sure to delete this user?" } %> 
+    8: <%= link_to "Show",  employee_path(employee) %>
+    9: </p>
+  
+app/views/employees/_employee.html.erb:6
+app/controllers/employees_controller.rb:13:in `create'
+Started GET "/employees" for ::1 at 2021-10-04 15:34:41 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/employees/index.html.erb:12
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 1.1ms | Allocations: 334)
+  Rendered employees/index.html.erb within layouts/application (Duration: 29.4ms | Allocations: 5630)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.4ms | Allocations: 11625)
+Completed 200 OK in 53ms (Views: 50.1ms | ActiveRecord: 1.9ms | Allocations: 12541)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:34:43 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 10.1ms | Allocations: 1145)
+  Rendered employees/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 1325)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 7288)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.0ms | Allocations: 8192)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:34:45 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendered employees/_employee.html.erb (Duration: 1.0ms | Allocations: 936)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2466)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil}, missing required keys: [:id]):
+    3: <hr>
+    4: <p> 
+    5: Name: <%= employee.name %> ㅤId:<%= employee.id%> ㅤ   
+    6: <%= link_to "Edit", edit_employee_path(employee) %>
+    7: <%= link_to "Delete", employee, method: :delete, data: { confirm: "are you sure to delete this user?" } %> 
+    8: <%= link_to "Show",  employee_path(employee) %>
+    9: </p>
+  
+app/views/employees/_employee.html.erb:6
+app/controllers/employees_controller.rb:13:in `create'
+Started GET "/employees" for ::1 at 2021-10-04 15:35:16 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 15.1ms | Allocations: 4232)
+  Rendered employees/index.html.erb within layouts/application (Duration: 22.3ms | Allocations: 5328)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 5392)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.1ms | Allocations: 6468)
+
+
+  
+ActionView::Template::Error (undefined method `edit_employees_path' for #<ActionView::Base:0x0000000000e858>
+Did you mean?  edit_employee_path
+               edit_employee_url
+               new_employee_path
+               employees_path):
+    3: <hr>
+    4: <p> 
+    5: Name: <%= employee.name %> ㅤId:<%= employee.id%> ㅤ   
+    6: <%= link_to "Edit", edit_employees_path(employee) %>
+    7: <%= link_to "Delete", employee, method: :delete, data: { confirm: "are you sure to delete this user?" } %> 
+    8: <%= link_to "Show",  employee_path(employee) %>
+    9: </p>
+  
+app/views/employees/_employee.html.erb:6
+app/views/employees/index.html.erb:12
+Started GET "/employees" for ::1 at 2021-10-04 15:35:34 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 1.2ms | Allocations: 447)
+  Rendered employees/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1543)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 7731)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 0.3ms | Allocations: 8834)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:35:37 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 3.9ms | Allocations: 1463)
+  Rendered employees/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1759)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 8307)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.0ms | Allocations: 8834)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:35:39 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendered employees/_employee.html.erb (Duration: 2.9ms | Allocations: 1095)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2619)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"employees", :id=>nil}, missing required keys: [:id]):
+    3: <hr>
+    4: <p> 
+    5: Name: <%= employee.name %> ㅤId:<%= employee.id%> ㅤ   
+    6: <%= link_to "Edit", edit_employee_path(employee) %>
+    7: <%= link_to "Delete", employee, method: :delete, data: { confirm: "are you sure to delete this user?" } %> 
+    8: <%= link_to "Show",  employee_path(employee) %>
+    9: </p>
+  
+app/views/employees/_employee.html.erb:6
+app/controllers/employees_controller.rb:13:in `create'
+Started GET "/employees" for ::1 at 2021-10-04 15:35:46 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 1.0ms | Allocations: 282)
+  Rendered employees/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1143)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 7159)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.2ms | Allocations: 7552)
+
+
+Started GET "/employees" for ::1 at 2021-10-04 15:36:47 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/employees/index.html.erb:12
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 1.5ms | Allocations: 333)
+  Rendered employees/index.html.erb within layouts/application (Duration: 21.3ms | Allocations: 5492)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 11438)
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 2.2ms | Allocations: 12353)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:36:48 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 12.7ms | Allocations: 1145)
+  Rendered employees/new.html.erb within layouts/application (Duration: 16.2ms | Allocations: 1819)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 7782)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms | Allocations: 8180)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:36:49 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 14.9ms | Allocations: 3176)
+  Rendered employees/new.html.erb within layouts/application (Duration: 15.3ms | Allocations: 3264)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 9205)
+Completed 200 OK in 32ms (Views: 27.0ms | ActiveRecord: 0.0ms | Allocations: 10725)
+
+
+Started GET "/employees" for ::1 at 2021-10-04 15:39:08 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 2.4ms | Allocations: 447)
+  Rendered employees/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 1551)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.2ms | Allocations: 7739)
+Completed 200 OK in 86ms (Views: 81.9ms | ActiveRecord: 0.1ms | Allocations: 8846)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:44:43 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 10.6ms | Allocations: 1559)
+  Rendered employees/new.html.erb within layouts/application (Duration: 19.5ms | Allocations: 2462)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 8649)
+Completed 200 OK in 53ms (Views: 50.5ms | ActiveRecord: 0.0ms | Allocations: 9760)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:44:45 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 19.0ms | Allocations: 3403)
+  Rendered employees/new.html.erb within layouts/application (Duration: 19.4ms | Allocations: 3491)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.7ms | Allocations: 9383)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.0ms | Allocations: 10866)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:44:52 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>"hola"}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 7.4ms | Allocations: 2850)
+  Rendered employees/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2938)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 8834)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.0ms | Allocations: 10282)
+
+
+Started GET "/employees" for ::1 at 2021-10-04 15:46:08 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 14.8ms | Allocations: 447)
+  Rendered employees/index.html.erb within layouts/application (Duration: 48.5ms | Allocations: 1549)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 61.7ms | Allocations: 7688)
+Completed 200 OK in 67ms (Views: 64.8ms | ActiveRecord: 0.2ms | Allocations: 8791)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:46:11 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 6.9ms | Allocations: 1572)
+  Rendered employees/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1868)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 8412)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.0ms | Allocations: 8937)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:46:12 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 9.0ms | Allocations: 3942)
+  Rendered employees/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 4030)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 9922)
+Completed 200 OK in 28ms (Views: 23.8ms | ActiveRecord: 0.0ms | Allocations: 11404)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:46:25 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 10.9ms | Allocations: 3942)
+  Rendered employees/new.html.erb within layouts/application (Duration: 11.7ms | Allocations: 4030)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 9922)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.0ms | Allocations: 11383)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:46:29 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>"5"}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 5.6ms | Allocations: 2318)
+  Rendered employees/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2406)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 8302)
+Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 0.0ms | Allocations: 9358)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:48:18 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>"5"}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 9.8ms | Allocations: 3931)
+  Rendered employees/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 4232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | Allocations: 10348)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.0ms | Allocations: 12116)
+
+
+Started GET "/employees" for ::1 at 2021-10-04 15:49:46 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 1.5ms | Allocations: 447)
+  Rendered employees/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1546)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 7685)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.2ms | Allocations: 8785)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:49:48 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 10.5ms | Allocations: 1570)
+  Rendered employees/new.html.erb within layouts/application (Duration: 16.9ms | Allocations: 2449)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 8462)
+Completed 200 OK in 43ms (Views: 39.4ms | ActiveRecord: 0.0ms | Allocations: 8987)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:49:49 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 12.0ms | Allocations: 4531)
+  Rendered employees/new.html.erb within layouts/application (Duration: 12.5ms | Allocations: 4619)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 10560)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 12047)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:51:32 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 2.3ms | Allocations: 1512)
+  Rendered employees/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1813)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 1878)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 4029)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<div class="container">
+    <%-  if @employee.errors.any? %>
+        <div class="alert alert-danger">
+        <h4>Error</h4>
+        <%-  if @employee.errors.[:name]? %> 
+        <p> Name <%= @employee.errors[:name].first%></p>
+        <%end%>
+        <p> Last Name <%= @employee.errors[:lastname].first%></p>
+        <p> Addres <%= @employee.errors[:address].first%></p>
+        <p> Phone <%= @employee.errors[:phone].first%></p>
+        <p> Salary <%= @employee.errors[:salary].first%></p>
+        </div>
+    <%end%>
+</div>
+
+<div class="form-group">
+<%= form_for @employee do |f|%>
+    <%= f.label :Name %>
+    <br>
+    <%= f.text_field :name, class:'form-control' %>
+    <br>
+    <%= f.label :LastName %>
+    <br>
+    <%= f.text_field :lastname, class:'form-control' %>
+    <br>
+    <%= f.label :Address %>
+    <br>
+    <%= f.text_field :address, class:'form-control' %>
+    <br>
+    <%= f.label :Phone %>
+    <br>
+    <%= f.text_field :phone, class:'form-control' %>
+    <br>
+    <%= f.label :Salary %>
+    <br>
+    <%= f.text_field :salary, class:'form-control' %>
+    <br>
+    <%= f.submit 'Save',:class => 'btn btn-primary' %>
+    <%= link_to "Home", employees_path,:class => 'btn btn-primary' %>
+<% end %>
+</div>
+):
+1:    
+2:    <div class="container">
+3:        <%-  if @employee.errors.any? %>
+4:            <div class="alert alert-danger">
+5:            <h4>Error</h4>
+6:            <%-  if @employee.errors.[:name]? %> 
+7:            <p> Name <%= @employee.errors[:name].first%></p>
+8:            <%end%>
+9:            <p> Last Name <%= @employee.errors[:lastname].first%></p>
+10:            <p> Addres <%= @employee.errors[:address].first%></p>
+11:            <p> Phone <%= @employee.errors[:phone].first%></p>
+12:            <p> Salary <%= @employee.errors[:salary].first%></p>
+13:            </div>
+14:        <%end%>
+15:    </div>
+16:    
+17:    <div class="form-group">
+18:    <%= form_for @employee do |f|%>
+19:        <%= f.label :Name %>
+20:        <br>
+21:        <%= f.text_field :name, class:'form-control' %>
+22:        <br>
+23:        <%= f.label :LastName %>
+24:        <br>
+25:        <%= f.text_field :lastname, class:'form-control' %>
+26:        <br>
+27:        <%= f.label :Address %>
+28:        <br>
+29:        <%= f.text_field :address, class:'form-control' %>
+30:        <br>
+31:        <%= f.label :Phone %>
+32:        <br>
+33:        <%= f.text_field :phone, class:'form-control' %>
+34:        <br>
+35:        <%= f.label :Salary %>
+36:        <br>
+37:        <%= f.text_field :salary, class:'form-control' %>
+38:        <br>
+39:        <%= f.submit 'Save',:class => 'btn btn-primary' %>
+40:        <%= link_to "Home", employees_path,:class => 'btn btn-primary' %>
+41:    <% end %>
+42:    </div>
+  
+app/views/employees/_form.html.erb:6: syntax error, unexpected '['
+app/views/employees/_form.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/employees/_form.html.erb:6: syntax error, unexpected '['
+app/views/employees/_form.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/employees/_form.html.erb:6: syntax error, unexpected '['
+app/views/employees/_form.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/employees/_form.html.erb:6: syntax error, unexpected '['
+app/views/employees/_form.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/employees/_form.html.erb:6: syntax error, unexpected '['
+app/views/employees/_form.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/employees/_form.html.erb:6: syntax error, unexpected '['
+app/views/employees/_form.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/employees/new.html.erb:3
+app/controllers/employees_controller.rb:13:in `create'
+Started GET "/employees" for ::1 at 2021-10-04 15:51:45 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 1.3ms | Allocations: 447)
+  Rendered employees/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1545)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 7733)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.2ms | Allocations: 8836)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:51:47 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 4.7ms | Allocations: 1587)
+  Rendered employees/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2336)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 2401)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 3025)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<div class="container">
+    <%-  if @employee.errors.any? %>
+        <div class="alert alert-danger">
+        <h4>Error</h4>
+        <%-  if @employee.errors.[:name] %> 
+        <p> Name <%= @employee.errors[:name].first%></p>
+        <%end%>
+        <p> Last Name <%= @employee.errors[:lastname].first%></p>
+        <p> Addres <%= @employee.errors[:address].first%></p>
+        <p> Phone <%= @employee.errors[:phone].first%></p>
+        <p> Salary <%= @employee.errors[:salary].first%></p>
+        </div>
+    <%end%>
+</div>
+
+<div class="form-group">
+<%= form_for @employee do |f|%>
+    <%= f.label :Name %>
+    <br>
+    <%= f.text_field :name, class:'form-control' %>
+    <br>
+    <%= f.label :LastName %>
+    <br>
+    <%= f.text_field :lastname, class:'form-control' %>
+    <br>
+    <%= f.label :Address %>
+    <br>
+    <%= f.text_field :address, class:'form-control' %>
+    <br>
+    <%= f.label :Phone %>
+    <br>
+    <%= f.text_field :phone, class:'form-control' %>
+    <br>
+    <%= f.label :Salary %>
+    <br>
+    <%= f.text_field :salary, class:'form-control' %>
+    <br>
+    <%= f.submit 'Save',:class => 'btn btn-primary' %>
+    <%= link_to "Home", employees_path,:class => 'btn btn-primary' %>
+<% end %>
+</div>
+):
+1:    
+2:    <div class="container">
+3:        <%-  if @employee.errors.any? %>
+4:            <div class="alert alert-danger">
+5:            <h4>Error</h4>
+6:            <%-  if @employee.errors.[:name] %> 
+7:            <p> Name <%= @employee.errors[:name].first%></p>
+8:            <%end%>
+9:            <p> Last Name <%= @employee.errors[:lastname].first%></p>
+10:            <p> Addres <%= @employee.errors[:address].first%></p>
+11:            <p> Phone <%= @employee.errors[:phone].first%></p>
+12:            <p> Salary <%= @employee.errors[:salary].first%></p>
+13:            </div>
+14:        <%end%>
+15:    </div>
+16:    
+17:    <div class="form-group">
+18:    <%= form_for @employee do |f|%>
+19:        <%= f.label :Name %>
+20:        <br>
+21:        <%= f.text_field :name, class:'form-control' %>
+22:        <br>
+23:        <%= f.label :LastName %>
+24:        <br>
+25:        <%= f.text_field :lastname, class:'form-control' %>
+26:        <br>
+27:        <%= f.label :Address %>
+28:        <br>
+29:        <%= f.text_field :address, class:'form-control' %>
+30:        <br>
+31:        <%= f.label :Phone %>
+32:        <br>
+33:        <%= f.text_field :phone, class:'form-control' %>
+34:        <br>
+35:        <%= f.label :Salary %>
+36:        <br>
+37:        <%= f.text_field :salary, class:'form-control' %>
+38:        <br>
+39:        <%= f.submit 'Save',:class => 'btn btn-primary' %>
+40:        <%= link_to "Home", employees_path,:class => 'btn btn-primary' %>
+41:    <% end %>
+42:    </div>
+  
+app/views/employees/_form.html.erb:6: syntax error, unexpected '['
+app/views/employees/_form.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/employees/_form.html.erb:6: syntax error, unexpected '['
+app/views/employees/_form.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/employees/_form.html.erb:6: syntax error, unexpected '['
+app/views/employees/_form.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/employees/_form.html.erb:6: syntax error, unexpected '['
+app/views/employees/_form.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/employees/_form.html.erb:6: syntax error, unexpected '['
+app/views/employees/_form.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/employees/_form.html.erb:6: syntax error, unexpected '['
+app/views/employees/_form.html.erb:44: syntax error, unexpected `end', expecting end-of-input
+app/views/employees/new.html.erb:3
+Started GET "/employees/new" for ::1 at 2021-10-04 15:52:00 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 3.6ms | Allocations: 1606)
+  Rendered employees/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1902)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 8089)
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 9196)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:52:02 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 14.1ms | Allocations: 4819)
+  Rendered employees/new.html.erb within layouts/application (Duration: 14.6ms | Allocations: 4907)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 10799)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.0ms | Allocations: 12258)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:52:06 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"a", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 13.8ms | Allocations: 3991)
+  Rendered employees/new.html.erb within layouts/application (Duration: 14.3ms | Allocations: 4079)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 50.9ms | Allocations: 9971)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.0ms | Allocations: 11419)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:52:34 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 10.9ms | Allocations: 1602)
+  Rendered employees/new.html.erb within layouts/application (Duration: 12.7ms | Allocations: 1897)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.2ms | Allocations: 8087)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.0ms | Allocations: 9190)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:52:36 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 20.8ms | Allocations: 4535)
+  Rendered employees/new.html.erb within layouts/application (Duration: 21.4ms | Allocations: 4623)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 10515)
+Completed 200 OK in 42ms (Views: 39.3ms | ActiveRecord: 0.0ms | Allocations: 11974)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:52:46 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"a", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 10.7ms | Allocations: 3972)
+  Rendered employees/new.html.erb within layouts/application (Duration: 12.0ms | Allocations: 4060)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 9952)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.0ms | Allocations: 11401)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:53:15 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 7.4ms | Allocations: 1602)
+  Rendered employees/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1899)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 8086)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.0ms | Allocations: 9193)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:53:17 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 26.6ms | Allocations: 4821)
+  Rendered employees/new.html.erb within layouts/application (Duration: 29.0ms | Allocations: 4909)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.9ms | Allocations: 10801)
+Completed 200 OK in 54ms (Views: 50.9ms | ActiveRecord: 0.0ms | Allocations: 12260)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:53:23 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 2.7ms | Allocations: 1134)
+  Rendered employees/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1222)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 7185)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.0ms | Allocations: 7580)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:53:26 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"a", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 13.3ms | Allocations: 3974)
+  Rendered employees/new.html.erb within layouts/application (Duration: 14.0ms | Allocations: 4062)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 10003)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.0ms | Allocations: 11452)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:55:11 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 6.2ms | Allocations: 1708)
+  Rendered employees/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 2009)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 8152)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.0ms | Allocations: 9260)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:55:11 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 5.2ms | Allocations: 1141)
+  Rendered employees/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1229)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 7237)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.0ms | Allocations: 7633)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:55:15 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"a", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 20.4ms | Allocations: 5360)
+  Rendered employees/new.html.erb within layouts/application (Duration: 23.1ms | Allocations: 5448)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.1ms | Allocations: 11340)
+Completed 200 OK in 62ms (Views: 57.5ms | ActiveRecord: 0.0ms | Allocations: 12788)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:55:19 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"a", "lastname"=>"s", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 16.9ms | Allocations: 4516)
+  Rendered employees/new.html.erb within layouts/application (Duration: 19.3ms | Allocations: 4604)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 10545)
+Completed 200 OK in 45ms (Views: 41.5ms | ActiveRecord: 0.0ms | Allocations: 11984)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:55:51 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"aa", "lastname"=>"s", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 11.7ms | Allocations: 5093)
+  Rendered employees/new.html.erb within layouts/application (Duration: 14.0ms | Allocations: 5392)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 11504)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.0ms | Allocations: 13655)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:56:06 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"juan manuel figueroa solis", "lastname"=>"s", "address"=>"1000", "phone"=>"88811", "salary"=>"hoal"}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 5.8ms | Allocations: 2029)
+  Rendered employees/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2117)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 8009)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.0ms | Allocations: 9419)
+
+
+Started GET "/employees" for ::1 at 2021-10-04 15:56:12 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 3.1ms | Allocations: 447)
+  Rendered employees/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1546)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 7514)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.1ms | Allocations: 8035)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:56:32 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 8.7ms | Allocations: 1137)
+  Rendered employees/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1225)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 55.3ms | Allocations: 7806)
+Completed 200 OK in 61ms (Views: 60.1ms | ActiveRecord: 0.0ms | Allocations: 8205)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:56:58 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"Employee4", "lastname"=>"EmployeeLN4", "address"=>"EmployeeAddres4", "phone"=>"8884", "salary"=>"500"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:10:in `create'
+  [1m[36mEmployee Create (7.9ms)[0m  [1m[32mINSERT INTO "employees" ("name", "lastname", "address", "phone", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Employee4"], ["lastname", "EmployeeLN4"], ["address", "EmployeeAddres4"], ["phone", "8884"], ["salary", 500], ["created_at", "2021-10-04 21:56:58.813288"], ["updated_at", "2021-10-04 21:56:58.813288"]]
+  ↳ app/controllers/employees_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (174.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/employees_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 182.7ms | Allocations: 5197)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"employees"}, missing required keys: [:id]
+Did you mean?  employee_url
+               employees_url
+               employees_path
+               new_employee_url):
+  
+app/controllers/employees_controller.rb:11:in `create'
+Started GET "/employees" for ::1 at 2021-10-04 15:57:20 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/employees/index.html.erb:12
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [4 times] (Duration: 1.6ms | Allocations: 423)
+  Rendered employees/index.html.erb within layouts/application (Duration: 29.3ms | Allocations: 5595)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 11590)
+Completed 200 OK in 43ms (Views: 40.7ms | ActiveRecord: 1.8ms | Allocations: 12506)
+
+
+Started DELETE "/employees/6" for ::1 at 2021-10-04 15:57:25 -0600
+Processing by EmployeesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"6"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:43:in `set_employee'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:32:in `destroy'
+  [1m[36mEmployee Destroy (0.4ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/employees_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (97.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/employees_controller.rb:32:in `destroy'
+Redirected to http://localhost:3000/employees
+Completed 302 Found in 121ms (ActiveRecord: 98.3ms | Allocations: 4831)
+
+
+Started GET "/employees" for ::1 at 2021-10-04 15:57:25 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [3 times] (Duration: 2.6ms | Allocations: 280)
+  Rendered employees/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 1129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 7093)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.1ms | Allocations: 7484)
+
+
+Started GET "/employees/new" for ::1 at 2021-10-04 15:57:27 -0600
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 2.6ms | Allocations: 1146)
+  Rendered employees/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1234)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 7197)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 7595)
+
+
+Started POST "/employees" for ::1 at 2021-10-04 15:57:42 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"Employee4", "lastname"=>"EmployeeLN4", "address"=>"EmployeeAddres4", "phone"=>"8884", "salary"=>"500"}, "commit"=>"Save"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:10:in `create'
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("name", "lastname", "address", "phone", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Employee4"], ["lastname", "EmployeeLN4"], ["address", "EmployeeAddres4"], ["phone", "8884"], ["salary", 500], ["created_at", "2021-10-04 21:57:42.733774"], ["updated_at", "2021-10-04 21:57:42.733774"]]
+  ↳ app/controllers/employees_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (155.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/employees_controller.rb:10:in `create'
+Redirected to http://localhost:3000/employees
+Completed 302 Found in 173ms (ActiveRecord: 156.4ms | Allocations: 4823)
+
+
+Started GET "/employees" for ::1 at 2021-10-04 15:57:42 -0600
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [4 times] (Duration: 2.3ms | Allocations: 370)
+  Rendered employees/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1233)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 7197)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.2ms | Allocations: 7589)
+
+

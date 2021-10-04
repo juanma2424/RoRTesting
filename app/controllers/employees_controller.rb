@@ -7,8 +7,10 @@ class EmployeesController < ApplicationController
 
   def create
     @employee = Employee.new employee_params
-    @employee.save
-    redirect_to @employee
+    if @employee.save
+      return redirect_to employees_path
+    end
+    render :new
   end
 
   def show
