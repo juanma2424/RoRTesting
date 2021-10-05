@@ -5624,3 +5624,43 @@ Processing by EmployeesController#index as HTML
 Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.4ms | Allocations: 8186)
 
 
+Started GET "/employees" for 127.0.0.1 at 2021-10-05 11:46:24 -0600
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:12
+  Rendered collection of employees/_employee.html.erb [4 times] (Duration: 5.6ms | Allocations: 612)
+  Rendered employees/index.html.erb within layouts/application (Duration: 41.2ms | Allocations: 6414)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 118.5ms | Allocations: 19356)
+Completed 200 OK in 136ms (Views: 116.9ms | ActiveRecord: 5.6ms | Allocations: 22340)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2021-10-05 11:49:27 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 205.3ms | Allocations: 347880)
+  Rendered employees/new.html.erb within layouts/application (Duration: 207.3ms | Allocations: 348291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 246.6ms | Allocations: 361228)
+Completed 200 OK in 269ms (Views: 249.5ms | ActiveRecord: 0.8ms | Allocations: 368371)
+
+
+Started POST "/employees" for 127.0.0.1 at 2021-10-05 11:51:41 -0600
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"name"=>"", "lastname"=>"", "address"=>"", "phone"=>"", "salary"=>""}, "commit"=>"Save"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 30.4ms | Allocations: 6543)
+  Rendered employees/new.html.erb within layouts/application (Duration: 63.2ms | Allocations: 6631)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 101.6ms | Allocations: 12525)
+Completed 200 OK in 112ms (Views: 108.3ms | ActiveRecord: 0.0ms | Allocations: 14127)
+
+
