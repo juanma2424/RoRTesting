@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
  before_action :set_employee, only: [:show, :edit, :update, :destroy]
-
+  
   def new
     @employee = Employee.new
   end
@@ -16,8 +16,12 @@ class EmployeesController < ApplicationController
   def show
   end
 
-  def index
+ def index
     @allEmployees = Employee.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @allEmployees.to_csv}
+    end
   end
 
   def edit
