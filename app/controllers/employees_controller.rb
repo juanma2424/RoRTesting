@@ -3,7 +3,6 @@ class EmployeesController < ApplicationController
 
   def new
     @employee = Employee.new
-    # tets
   end
 
   def create
