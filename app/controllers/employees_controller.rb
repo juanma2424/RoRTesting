@@ -3,6 +3,7 @@ class EmployeesController < ApplicationController
 
   def new
     @employee = Employee.new
+    # siiuuu
   end
 
   def create
