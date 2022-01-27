@@ -6,6 +6,7 @@ Name: <%= employee.name %> ㅤId:<%= employee.id%> ㅤ
 <%= link_to "Edit", edit_employee_path(employee) %>
 <%= link_to "Delete", employee, method: :delete, data: { confirm: "are you sure to delete this user?" } %> 
 <%= link_to "Show",  employee_path(employee) %>
+<%= link_to "CSV", method: :csv_cars%> 
 </p>
 <hr>
 </div>
